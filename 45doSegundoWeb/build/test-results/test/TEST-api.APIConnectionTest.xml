@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.APIConnectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-03-04T13:35:40" hostname="lucas-Z450LA" time="0.233">
+  <properties/>
+  <testcase name="test" classname="api.APIConnectionTest" time="0.233"/>
+  <system-out><![CDATA[iniciado
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
