@@ -2,6 +2,9 @@ package mthumb.a45doSegundoWeb.models;
 
 import mthumb.a45doSegundoWeb.core.JSONMapper;
 
+/** Entidade que representa uma liga
+ *  @author lucas
+ */
 public class League {
 	
 	@JSONMapper(field="idLeague", on = "countrys")

@@ -10,7 +10,11 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
+/**
+ * Handler que instancia uma entidade de
+ * acordo com a sua propriedade do JSON da api
+ * @author lucas
+ */
 public class ModelHandler {
 	
 	public static List<Object> toObjects(Class<?> obj, JSONObject json) throws Exception {

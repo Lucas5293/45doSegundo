@@ -8,12 +8,17 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import mthumb.a45doSegundoWeb.core.Service;
 
+/** Controller base da conexão a api
+ * @author lucas
+ */
+@Service
 public class APIConnection{
 	
 	private static final String USER_AGENT = "Mozilla/5.0";
 
-    public static String sendGet(String url) throws Exception {
+    public String sendGet(String url) throws Exception {
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -33,7 +38,7 @@ public class APIConnection{
         return response.toString();
     }
     
-    public static JSONObject toJSON(String jsonString) throws JSONException { 	
+    public JSONObject toJSON(String jsonString) throws JSONException {
     	return new JSONObject(jsonString);
     }
     
