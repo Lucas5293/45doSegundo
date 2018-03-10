@@ -5,12 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/** Annotation de mapeamento do JSON na entidade
+/** Annotation de uma instancia de Service
  *  @author lucas
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface JSONMapper{
-	String field();
-	String on();
+public @interface ServiceInstance {
 }

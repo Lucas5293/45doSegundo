@@ -6,20 +6,23 @@ import org.junit.Before;
 import org.junit.Test;
 
 import mthumb.a45doSegundoWeb.core.PropertiesFactory;
+import mthumb.a45doSegundoWeb.core.TestsFactory;
 
-public class APIConnectionTest {
-	
-	Properties propertiesApi;
+public class APIConnectionTest extends TestsFactory{
+
+	PropertiesFactory propertiesFactory;
+	APIConnection apiConnection;
 
 	@Before
 	public void setUp() throws Exception {
-		propertiesApi=new PropertiesFactory().get("api");
+		propertiesFactory = (PropertiesFactory) this.getServiceHandler().getInstance(PropertiesFactory.class);
+		apiConnection = (APIConnection) this.getServiceHandler().getInstance(APIConnection.class);
 	}
 	@Test
 	public void test() throws Exception {
-		String result = APIConnection.sendGet(propertiesApi.getProperty("api.leagues.all"));
+		String result = apiConnection.sendGet(propertiesFactory.get("api").getProperty("api.leagues.all"));
 		System.out.println(result);
-		System.out.println(APIConnection.toJSON(result).toString());
+		System.out.println(apiConnection.toJSON(result).toString());
 	}
 
 }

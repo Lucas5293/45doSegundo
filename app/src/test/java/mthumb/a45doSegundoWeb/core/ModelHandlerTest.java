@@ -10,20 +10,22 @@ import org.junit.Test;
 import mthumb.a45doSegundoWeb.api.APIConnection;
 import mthumb.a45doSegundoWeb.models.League;
 
-public class ModelHandlerTest {
-	
-	Properties propertiesApi;
+public class ModelHandlerTest extends TestsFactory {
+
+	PropertiesFactory propertiesFactory;
+	APIConnection apiConnection;
 
 	@Before
 	public void setUp() throws Exception {
-		propertiesApi=new PropertiesFactory().get("api");
+		propertiesFactory = (PropertiesFactory) this.getServiceHandler().getInstance(PropertiesFactory.class);
+		apiConnection = (APIConnection) this.getServiceHandler().getInstance(APIConnection.class);
 	}
 	
 	@Test
 	public void test() throws Exception {
-		String result = APIConnection.sendGet(format(propertiesApi.getProperty("api.leagues.by.country"),"brazil"));
+		String result = apiConnection.sendGet(format(propertiesFactory.get("api").getProperty("api.leagues.by.country"),"brazil"));
 		
-		for(Object o : ModelHandler.toObjects(League.class,APIConnection.toJSON(result)) ) {
+		for(Object o : ModelHandler.toObjects(League.class,apiConnection.toJSON(result)) ) {
 			League liga = (League) o;
 			System.out.println(liga.id);
 			System.out.println(liga.nome);
