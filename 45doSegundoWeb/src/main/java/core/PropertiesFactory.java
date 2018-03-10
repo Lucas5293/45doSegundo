@@ -8,7 +8,7 @@ public class PropertiesFactory {
 	public static Properties get(String file) throws Exception {
 		
 		Properties props = new Properties();
-		FileInputStream fileInputStream = new FileInputStream(format("./Resources/%s.properties", file));
+		FileInputStream fileInputStream = new FileInputStream(format("./resources/%s.properties", file));
 		props.load(fileInputStream);
 		return props;
 	}
