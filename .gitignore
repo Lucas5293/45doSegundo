@@ -1,11 +1,3 @@
-.idea/misc.xml
-45doSegundo.iml
-app/app.iml
-local.properties
-gradle/wrapper/gradle-wrapper.properties
-.idea/caches/build_file_checksums.ser
-.idea/codeStyles/Project.xml
-.idea/kotlinc.xml
 # Created by https://www.gitignore.io/api/intellij
 build/
 .gradle/
