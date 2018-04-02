@@ -1,4 +1,4 @@
-package mthumb.a45dosegundo;
+package com.mthumb.a45dosegundo;
 
 import org.junit.Test;
 

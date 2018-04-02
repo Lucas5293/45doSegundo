@@ -1,4 +1,4 @@
-package mthumb.a45dosegundo;
+package com.mthumb.a45dosegundo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("a45doSegundo.a45dosegundo", appContext.getPackageName());
+        assertEquals("com.mthumb.a45dosegundo", appContext.getPackageName());
     }
 }
