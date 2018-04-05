@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EscalaActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".EscalaFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <EditText
+            <TextView
                 android:id="@+id/N"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
@@ -25,7 +26,7 @@
                 android:text="Nº"
                 android:layout_weight="20.40" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Nome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +35,7 @@
                 android:inputType="textPersonName"
                 android:text="Nome" />
 
-            <EditText
+            <TextView
                 android:id="@+id/posicao"
                 android:layout_width="126dp"
                 android:layout_height="wrap_content"

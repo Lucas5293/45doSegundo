@@ -55,3 +55,12 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+*.properties
+*.properties
+local.properties
+*.properties
+*.properties
+*.properties
+local.properties
+local.properties
+local.properties

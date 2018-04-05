@@ -1,7 +1,7 @@
 package com.mthumb.a45dosegundo;
 
+
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,9 +10,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -54,11 +51,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            fragmentManager.beginTransaction()
+                    .replace(R.id.troca, new ContentFragment())
+                    .commit();
         } else if (id == R.id.nav_escalacao) {
-            //fragmentManager.beginTransaction()
-                    //.replace(R.id.content_main, new EscalaActivity())
-                    //.commit();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.troca, new EscalaFragment())
+                    .commit();
         } else if (id == R.id.nav_config) {
 
         } else if (id == R.id.nav_share) {
