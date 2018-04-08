@@ -2,27 +2,28 @@ package com.mthumb.a45doSegundoWeb.impl;
 
 import java.util.List;
 
-import com.mthumb.a45doSegundoWeb.api.LeagueDataAccess;
+import com.mthumb.a45doSegundoWeb.api.LeagueDAO;
 import com.mthumb.a45doSegundoWeb.controllers.ControllerLeague;
-import com.mthumb.a45doSegundoWeb.core.Service;
-import com.mthumb.a45doSegundoWeb.core.ServiceInstance;
+import com.mthumb.a45doSegundoWeb.core.ServiceHandler;
 import com.mthumb.a45doSegundoWeb.models.League;
 
 /** Implementação de {@link com.mthumb.a45doSegundoWeb.controllers.ControllerLeague}
  *  @author lucas
  */
-@Service
 public class ControllerLeagueImpl implements ControllerLeague {
 
-    @ServiceInstance
-    public LeagueDataAccess leagueDataAccess;
+    private LeagueDAO leagueDAO;
+
+    public ControllerLeagueImpl(){
+        this.leagueDAO = (LeagueDAO) ServiceHandler.get(LeagueDAO.class);
+    }
 
     public List<League> getLeagues() throws Exception {
-        return leagueDataAccess.getLeagues();
+        return leagueDAO.getLeagues();
     }
 
     public List<League> getLeaguesByCountry(String country) throws Exception {
-        return leagueDataAccess.getLeaguesByCountry(country);
+        return leagueDAO.getLeaguesByCountry(country);
     }
 
 }

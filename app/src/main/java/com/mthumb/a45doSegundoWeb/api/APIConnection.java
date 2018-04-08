@@ -8,12 +8,9 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.mthumb.a45doSegundoWeb.core.Service;
-
 /** Controller base da conexão a api
  * @author lucas
  */
-@Service
 public class APIConnection{
 	
 	private static final String USER_AGENT = "Mozilla/5.0";
@@ -41,8 +38,4 @@ public class APIConnection{
     public JSONObject toJSON(String jsonString) throws JSONException {
     	return new JSONObject(jsonString);
     }
-    
-    
-
-
 }

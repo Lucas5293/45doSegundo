@@ -8,7 +8,6 @@ import static java.lang.String.format;
 /** Reponsável por carregar as properties
  *  @author lucas
  */
-@Service
 public class PropertiesFactory {
 
 	public Properties get(String file) throws Exception {

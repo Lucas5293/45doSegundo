@@ -5,10 +5,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/** Annotation de uma instancia de Service
- *  @author lucas
+/**
+ * Created by lucas on 08/04/2018.
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ServiceInstance {
+public @interface EmptyOn {
+    String field();
+    String value();
 }

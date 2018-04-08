@@ -1,10 +1,14 @@
 package com.mthumb.a45doSegundoWeb.models;
 
+import com.mthumb.a45doSegundoWeb.core.EmptyOn;
 import com.mthumb.a45doSegundoWeb.core.JSONMapper;
+import com.mthumb.a45doSegundoWeb.core.JSONModel;
 
 /** Entidade que representa uma liga
  *  @author lucas
  */
+@JSONModel
+@EmptyOn(field="countrys", value="null")
 public class League {
 	
 	@JSONMapper(field="idLeague", on = "countrys")
