@@ -9,7 +9,7 @@ import com.mthumb.a45doSegundoWeb.models.League;
  */
 public interface ControllerLeague{
 
-	public List<League> getLeagues() throws Exception;
+	List<League> getLeagues() throws Exception;
 
-	public List<League> getLeaguesByCountry(String country) throws Exception;
+	List<League> getLeaguesByCountry(String country) throws Exception;
 }
