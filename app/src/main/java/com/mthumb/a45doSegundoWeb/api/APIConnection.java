@@ -23,6 +23,10 @@ public class APIConnection{
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
 
+        //int responseCode = con.getResponseCode();
+        System.out.println("\nlucas > Sending 'GET' request to URL : " + url);
+        //System.out.println("lucas > Response Code : " + responseCode);
+
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         
@@ -31,7 +35,9 @@ public class APIConnection{
             response.append(inputLine);
         }
         in.close();
-        
+
+        System.out.println("lucas >"+response.toString());
+
         return response.toString();
     }
     

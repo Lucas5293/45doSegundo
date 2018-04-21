@@ -14,8 +14,11 @@ public class Event {
     @JSONMapper(field = "idEvent", on="results")
     private int id;
 
-    @JSONMapper(field = "strEvent", on="results")
-    private String eventName;
+    @JSONMapper(field = "strHomeTeam", on="results")
+    private String homeTeam;
+
+    @JSONMapper(field = "strAwayTeam", on="results")
+    private String awayTeam;
 
     @JSONMapper(field = "intHomeScore", on="results")
     private int homeGols;
@@ -32,14 +35,6 @@ public class Event {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getEventName() {
-        return eventName;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
     }
 
     public int getHomeGols() {
@@ -64,5 +59,21 @@ public class Event {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setHomeTeam(String homeTeam) {
+        this.homeTeam = homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
     }
 }

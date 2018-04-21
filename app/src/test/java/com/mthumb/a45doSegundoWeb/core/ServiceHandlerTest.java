@@ -50,7 +50,7 @@ public class ServiceHandlerTest{
         System.out.println("\nJogos\n");
 
         for (Event event: controllerEvent.getLastFiveEventsByTeamId(id)){
-            System.out.println(event.getEventName());
+            System.out.println(event.getHomeTeam()+" vs "+event.getAwayTeam());
         }
 
     }
