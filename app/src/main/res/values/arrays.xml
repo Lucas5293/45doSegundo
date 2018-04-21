@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="times_array">
+    <item>Palmeiras</item>
+    <item>Santos</item>
+    <item>Corinthians</item>
+    <item>São Paulo</item>
+</string-array>
+</resources>
