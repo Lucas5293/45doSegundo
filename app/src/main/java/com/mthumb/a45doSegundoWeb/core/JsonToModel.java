@@ -39,6 +39,7 @@ public class JsonToModel {
 		}
 		
 		for(Field field: toSet.keySet()) {
+			field.setAccessible(true);
 			int objIndex=0;
 			String atributo  = toSet.get(field).field();
 			JSONArray jsonArray = (JSONArray) json.get(toSet.get(field).on());
@@ -53,14 +54,17 @@ public class JsonToModel {
 				else
 					o = objetos.get(objIndex);
 							
-				Object atributoValue;
-				if (field.getType()!=String.class)
-					atributoValue = JsonToModel
-						.convertToPrimitive(field.getType(), (String) content.get(atributo));
-				else
-					atributoValue = content.get(atributo);
-				
-				field.set(o, atributoValue);
+				Object atributoValue=null;
+				if (!content.get(atributo).toString().equals("null")) {
+					if (field.getType() != String.class)
+						atributoValue = JsonToModel
+								.convertToPrimitive(field.getType(), (String) content.get(atributo));
+					else
+						atributoValue = content.get(atributo);
+				}
+				if (atributoValue!=null) {
+					field.set(o, atributoValue);
+				}
 				objIndex++;
 			}
 		}

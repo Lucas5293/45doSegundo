@@ -12,11 +12,11 @@ import com.mthumb.a45doSegundoWeb.core.JSONModel;
 public class League {
 	
 	@JSONMapper(field="idLeague", on = "countrys")
-	public int id;
+	private int id;
 	@JSONMapper(field="strLeague", on = "countrys")
-	public String nome;
+	private String nome;
 	@JSONMapper(field="strCountry", on = "countrys")
-	public String pais;
+	private String pais;
 	
 	public String getNome() {return nome;}
 	
