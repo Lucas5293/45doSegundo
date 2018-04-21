@@ -25,18 +25,18 @@ public class JsonToModelTest{
 
 		for(Object o : JsonToModel.toObjects(League.class,apiConnection.toJSON(result)) ) {
 			League liga = (League) o;
-			System.out.println(liga.id);
-			System.out.println(liga.nome);
-			System.out.println(liga.pais);
+			System.out.println(liga.getId());
+			System.out.println(liga.getNome());
+			System.out.println(liga.getPais());
 		}
 		System.out.println("new");
 		result = apiConnection.sendGet(format(propertiesFactory.get("api").getProperty("api.leagues.by.country"),"bsadsadsasad"));
 
 		for(Object o : JsonToModel.toObjects(League.class,apiConnection.toJSON(result)) ) {
 			League liga = (League) o;
-			System.out.println(liga.id);
-			System.out.println(liga.nome);
-			System.out.println(liga.pais);
+			System.out.println(liga.getId());
+			System.out.println(liga.getNome());
+			System.out.println(liga.getPais());
 		}
 	}
 
