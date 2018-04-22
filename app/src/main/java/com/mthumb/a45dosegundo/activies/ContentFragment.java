@@ -17,6 +17,7 @@ import android.app.Fragment;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mthumb.a45doSegundo.tools.EventCardView;
 import com.mthumb.a45doSegundoWeb.controllers.ControllerEvent;
 import com.mthumb.a45doSegundoWeb.controllers.ControllerTeam;
 import com.mthumb.a45doSegundoWeb.core.ServiceHandler;
@@ -62,9 +63,9 @@ public class ContentFragment extends Fragment {
             Bitmap time2logo = null;
             Bitmap time1logo = null;
 
-            Event event = controllerEvent.getLastFiveEventsByTeamId(time.getId()).get(2);
+            List<Event> events = controllerEvent.getLastFiveEventsByTeamId(time.getId());
 
-            Team timeFora = controllerTeam.getTeamById(event.getHomeTeamId(
+            /*Team timeFora = controllerTeam.getTeamById(event.getHomeTeamId(
 
 
             )).get(0);
@@ -78,27 +79,19 @@ public class ContentFragment extends Fragment {
 
             time2logo = BitmapFactory.decodeStream(is1);
             time1logo = BitmapFactory.decodeStream(is2);
+            */
+            int i =0;
+            for(EventCardView eventCardView: this.populeRowsEventCardViews(myView)){
+                Event event = events.get(i);
 
-            for(Pair<TextView, TextView> elementos: this.populeRowsEvents()){
-                Object elemento1 = elementos.first;
-                Object elemento2 = elementos.second;
+                eventCardView.getNomeTimesTextView().first.setText(event.getHomeTeam());
+                eventCardView.getNomeTimesTextView().second.setText(event.getAwayTeam());
 
-                switch (elemento1.getClass().getSimpleName()){
-                    case "TextView":
-                        System.out.println("é um textview");
-                        break;
-                    case "TextView":
-                        System.out.println("é um textview");
-                        break;
-                }
+                eventCardView.getResultadoTimesTextView().first.setText(event.getHomeGols());
+                eventCardView.getResultadoTimesTextView().second.setText(event.getAwayGols());
+
+                i++;
             }
-
-
-
-
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -106,33 +99,37 @@ public class ContentFragment extends Fragment {
         return myView;
     }
 
-    private List<Pair<TextView, TextView>> populeRowsEvents(){
-        List<Pair<TextView, TextView>> rowEvent = new ArrayList<>();
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Time1card1, R.id.Time2card1));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Time1card2, R.id.Time2card2));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Time1card3, R.id.Time2card3));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Time1card4, R.id.Time2card4));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Time1card5, R.id.Time2card5));
+    private List<EventCardView> populeRowsEventCardViews(View view){
 
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Gols1card1, R.id.Gols2card1));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Gols1card2, R.id.Gols2card2));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Gols1card3, R.id.Gols2card3));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Gols1card4, R.id.Gols2card4));
-        rowEvent.add((Pair<TextView, TextView>) this.addRow(R.id.Gols1card5, R.id.Gols2card5));
+        List<EventCardView> cardViews = new ArrayList<>();
+        EventCardView cardView1, cardView2, cardView3, cardView4, cardView5;
 
-        rowEvent.add((Pair<ImageView, ImageView>) this.addRow(R.id.Logo1card1, R.id.Logo2card1));
-        rowEvent.add((Pair<ImageView, ImageView>) this.addRow(R.id.Logo1card2, R.id.Logo2card2));
-        rowEvent.add((Pair<ImageView, ImageView>) this.addRow(R.id.Logo1card3, R.id.Logo2card3));
-        rowEvent.add((Pair<ImageView, ImageView>) this.addRow(R.id.Logo1card4, R.id.Logo2card4));
-        rowEvent.add((Pair<ImageView, ImageView>) this.addRow(R.id.Logo1card5, R.id.Logo2card5));
+        cardView1 = new EventCardView(view);
+        cardView1.setNomeTimesTextViewById(R.id.Time1card1, R.id.Time2card1);
+        cardView1.setResultadoTimesTextViewById(R.id.Gols1card1, R.id.Gols2card1);
+        cardView1.setLogoTimesTextViewById(R.id.Logo1card1, R.id.Logo2card1);
 
-        return rowEvent;
+        cardView2 = new EventCardView(view);
+        cardView2.setNomeTimesTextViewById(R.id.Time1card2, R.id.Time2card2);
+        cardView2.setResultadoTimesTextViewById(R.id.Gols1card2, R.id.Gols2card2);
+        cardView2.setLogoTimesTextViewById(R.id.Logo1card2, R.id.Logo2card2);
+
+        cardView3 = new EventCardView(view);
+        cardView3.setNomeTimesTextViewById(R.id.Time1card3, R.id.Time2card3);
+        cardView3.setResultadoTimesTextViewById(R.id.Gols1card3, R.id.Gols2card3);
+        cardView3.setLogoTimesTextViewById(R.id.Logo1card3, R.id.Logo2card3);
+
+        cardView4 = new EventCardView(view);
+        cardView4.setNomeTimesTextViewById(R.id.Time1card4, R.id.Time2card4);
+        cardView4.setResultadoTimesTextViewById(R.id.Gols1card4, R.id.Gols2card4);
+        cardView4.setLogoTimesTextViewById(R.id.Logo1card4, R.id.Logo2card4);
+
+        cardView5 = new EventCardView(view);
+        cardView5.setNomeTimesTextViewById(R.id.Time1card5, R.id.Time2card5);
+        cardView5.setResultadoTimesTextViewById(R.id.Gols1card5, R.id.Gols2card5);
+        cardView5.setLogoTimesTextViewById(R.id.Logo1card5, R.id.Logo2card5);
+
+        return cardViews;
     }
-
-
-    private Pair<?,?> addRow(int element1, int element2){
-       return new Pair<Object,Object> (myView.findViewById(element1), myView.findViewById(element2));
-    }
-
 }
 
