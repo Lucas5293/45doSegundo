@@ -12,5 +12,5 @@ public interface ControllerTeam {
 
     List<Team> getTeamByName(String name) throws Exception;
 
-    List<Team> getTeamByLeagueId(int leagueId) throws Exception;
+    List<Team> getTeamById(int id) throws Exception;
 }

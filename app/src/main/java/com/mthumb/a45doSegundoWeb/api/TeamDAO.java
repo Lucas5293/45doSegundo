@@ -31,8 +31,8 @@ public class TeamDAO {
         return (List<Team>) (Object) JsonToModel.toObjects(Team.class,apiConnection.toJSON(result));
     }
 
-    public List<Team> getTeamById(int leagueId) throws Exception{
-        String result = apiConnection.sendGet(format(propertiesFactory.get("api").getProperty("api.teams.by.name"),leagueId));
+    public List<Team> getTeamById(int id) throws Exception{
+        String result = apiConnection.sendGet(format(propertiesFactory.get("api").getProperty("api.teams.by.id"), id));
         return (List<Team>) (Object) JsonToModel.toObjects(Team.class,apiConnection.toJSON(result));
     }
 }

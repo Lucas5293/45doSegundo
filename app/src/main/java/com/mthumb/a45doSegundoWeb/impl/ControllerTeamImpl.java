@@ -25,7 +25,7 @@ public class ControllerTeamImpl implements ControllerTeam {
     }
 
     @Override
-    public List<Team> getTeamByLeagueId(int leagueId) throws Exception {
-        return this.dao.getTeamById(leagueId);
+    public List<Team> getTeamById(int id) throws Exception {
+        return this.dao.getTeamById(id);
     }
 }

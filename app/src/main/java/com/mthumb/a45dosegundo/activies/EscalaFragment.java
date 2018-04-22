@@ -1,4 +1,4 @@
-package com.mthumb.a45dosegundo;
+package com.mthumb.a45dosegundo.activies;
 
 /**
  * Created by silva on 29/03/2018.
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.app.Fragment;
+
+import com.mthumb.a45dosegundo.R;
 
 public class EscalaFragment extends Fragment {
 

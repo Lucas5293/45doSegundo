@@ -19,6 +19,8 @@ public class Team {
     private String estadio;
     @JSONMapper(field="idLeague", on = "teams")
     private int leagueId;
+    @JSONMapper(field="strTeamBadge", on = "teams")
+    private String imageUrl;
 
     public int getId() {
         return id;
@@ -50,5 +52,13 @@ public class Team {
 
     public void setLeagueId(int leagueId) {
         this.leagueId = leagueId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
