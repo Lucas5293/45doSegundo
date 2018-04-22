@@ -43,7 +43,6 @@ public class ContentFragment extends Fragment {
     public ControllerEvent controllerEvent;
 
     public ContentFragment() {
-
         controllerTeam = (ControllerTeam) ServiceHandler.get(ControllerTeamImpl.class);
         controllerEvent = (ControllerEvent) ServiceHandler.get(ControllerEventImpl.class);
     }
@@ -60,35 +59,52 @@ public class ContentFragment extends Fragment {
         try {
             Team time = controllerTeam.getTeamByName("palmeiras").get(0);
 
-            Bitmap time2logo = null;
-            Bitmap time1logo = null;
-
             List<Event> events = controllerEvent.getLastFiveEventsByTeamId(time.getId());
 
-            /*Team timeFora = controllerTeam.getTeamById(event.getHomeTeamId(
-
-
-            )).get(0);
-
-            InputStream is2 = new URL(timeFora.getImageUrl()).openStream();
-            InputStream is1 = new URL(time.getImageUrl()).openStream();
-
-            System.out.println(timeFora.getImageUrl());
-            System.out.println(time.getImageUrl());
-
-
-            time2logo = BitmapFactory.decodeStream(is1);
-            time1logo = BitmapFactory.decodeStream(is2);
-            */
             int i =0;
+
             for(EventCardView eventCardView: this.populeRowsEventCardViews(myView)){
                 Event event = events.get(i);
 
+                // Nome dos times
                 eventCardView.getNomeTimesTextView().first.setText(event.getHomeTeam());
                 eventCardView.getNomeTimesTextView().second.setText(event.getAwayTeam());
 
-                eventCardView.getResultadoTimesTextView().first.setText(event.getHomeGols());
-                eventCardView.getResultadoTimesTextView().second.setText(event.getAwayGols());
+                // Gols dos times
+                eventCardView.getResultadoTimesTextView().first.setText(String.valueOf(event.getHomeGols()));
+                eventCardView.getResultadoTimesTextView().second.setText(String.valueOf(event.getAwayGols()));
+
+                // Imagens miniaturas dos times
+                InputStream inputTeam1=null;
+                InputStream inputTeam2=null;
+
+                if (time.getId()==event.getHomeTeamId()){
+                    inputTeam1 = new URL(time.getImageUrl()).openStream();
+
+                    List<Team> timeForaLista = controllerTeam.getTeamById(event.getAwayTeamId());
+                    if (!timeForaLista.isEmpty()) {
+                        Team timeFora = timeForaLista.get(0);
+                        inputTeam2 = new URL(timeFora.getImageUrl()).openStream();
+                    }
+                }
+                else{
+                    inputTeam2 = new URL(time.getImageUrl()).openStream();
+
+                    List<Team> timeForaLista = controllerTeam.getTeamById(event.getHomeTeamId());
+                    if (!timeForaLista.isEmpty()) {
+                        Team timeFora = timeForaLista.get(0);
+                        inputTeam1 = new URL(timeFora.getImageUrl()).openStream();
+                    }
+                }
+
+                if (inputTeam1!=null){
+                    Bitmap bitmap1 = BitmapFactory.decodeStream(inputTeam1);
+                    eventCardView.getLogoTimesImageView().first.setImageBitmap(bitmap1);
+                }
+                if (inputTeam2!=null){
+                    Bitmap bitmap2 = BitmapFactory.decodeStream(inputTeam2);
+                    eventCardView.getLogoTimesImageView().second.setImageBitmap(bitmap2);
+                }
 
                 i++;
             }
@@ -107,27 +123,33 @@ public class ContentFragment extends Fragment {
         cardView1 = new EventCardView(view);
         cardView1.setNomeTimesTextViewById(R.id.Time1card1, R.id.Time2card1);
         cardView1.setResultadoTimesTextViewById(R.id.Gols1card1, R.id.Gols2card1);
-        cardView1.setLogoTimesTextViewById(R.id.Logo1card1, R.id.Logo2card1);
+        cardView1.setLogoTimesTextViewById(R.id.Logo2card1, R.id.Logo1card1);
 
         cardView2 = new EventCardView(view);
         cardView2.setNomeTimesTextViewById(R.id.Time1card2, R.id.Time2card2);
         cardView2.setResultadoTimesTextViewById(R.id.Gols1card2, R.id.Gols2card2);
-        cardView2.setLogoTimesTextViewById(R.id.Logo1card2, R.id.Logo2card2);
+        cardView2.setLogoTimesTextViewById(R.id.Logo2card2, R.id.Logo1card2);
 
         cardView3 = new EventCardView(view);
         cardView3.setNomeTimesTextViewById(R.id.Time1card3, R.id.Time2card3);
         cardView3.setResultadoTimesTextViewById(R.id.Gols1card3, R.id.Gols2card3);
-        cardView3.setLogoTimesTextViewById(R.id.Logo1card3, R.id.Logo2card3);
+        cardView3.setLogoTimesTextViewById(R.id.Logo2card3, R.id.Logo1card3);
 
         cardView4 = new EventCardView(view);
         cardView4.setNomeTimesTextViewById(R.id.Time1card4, R.id.Time2card4);
         cardView4.setResultadoTimesTextViewById(R.id.Gols1card4, R.id.Gols2card4);
-        cardView4.setLogoTimesTextViewById(R.id.Logo1card4, R.id.Logo2card4);
+        cardView4.setLogoTimesTextViewById(R.id.Logo2card4, R.id.Logo1card4);
 
         cardView5 = new EventCardView(view);
         cardView5.setNomeTimesTextViewById(R.id.Time1card5, R.id.Time2card5);
         cardView5.setResultadoTimesTextViewById(R.id.Gols1card5, R.id.Gols2card5);
-        cardView5.setLogoTimesTextViewById(R.id.Logo1card5, R.id.Logo2card5);
+        cardView5.setLogoTimesTextViewById(R.id.Logo2card5, R.id.Logo1card5);
+
+        cardViews.add(cardView1);
+        cardViews.add(cardView2);
+        cardViews.add(cardView3);
+        cardViews.add(cardView4);
+        cardViews.add(cardView5);
 
         return cardViews;
     }
