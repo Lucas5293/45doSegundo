@@ -1,4 +1,4 @@
-package com.mthumb.a45dosegundo.activies;
+package com.mthumb.a45doSegundo.activies;
 
 /**
  * Created by silva on 29/03/2018.
@@ -31,7 +31,7 @@ import com.mthumb.a45doSegundoWeb.impl.ControllerEventImpl;
 import com.mthumb.a45doSegundoWeb.impl.ControllerTeamImpl;
 import com.mthumb.a45doSegundoWeb.models.Event;
 import com.mthumb.a45doSegundoWeb.models.Team;
-import com.mthumb.a45dosegundo.R;
+import com.mthumb.a45doSegundo.R;
 
 import org.w3c.dom.Text;
 

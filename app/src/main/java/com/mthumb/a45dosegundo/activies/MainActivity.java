@@ -1,4 +1,4 @@
-package com.mthumb.a45dosegundo.activies;
+package com.mthumb.a45doSegundo.activies;
 
 
 import android.app.FragmentManager;
@@ -11,9 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.mthumb.a45dosegundo.R;
-import com.mthumb.a45dosegundo.activies.ContentFragment;
-import com.mthumb.a45dosegundo.activies.EscalaFragment;
+import com.mthumb.a45doSegundo.R;
+import com.mthumb.a45doSegundo.activies.ContentFragment;
+import com.mthumb.a45doSegundo.activies.EscalaFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener/*, AdapterView.OnItemSelectedListener*/ {
