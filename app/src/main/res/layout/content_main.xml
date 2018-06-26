@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activies.MainActivity"
+    tools:context="com.mthumb.a45doSegundo.activies.MainActivitya45dosegundo.activies.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     >
 
@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteX="-3dp" />
+            tools:layout_editor_absoluteX="-1dp" />
 
         <ImageView
             android:id="@+id/logotime"
@@ -41,7 +41,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:layout_editor_absoluteX="23dp"
-            app:srcCompat="@mipmap/ic_palmeiras_logo" />
+            app:srcCompat="@mipmap/ic_palmeiras_logo"
+            tools:layout_editor_absoluteX="23dp" />
 
         <TextView
             android:id="@+id/ola"
@@ -59,7 +60,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/backdroundtext"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <TextView
             android:id="@+id/text"
@@ -76,8 +79,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/backdroundtext"
-            app:layout_constraintVertical_bias="0.925"
-            tools:layout_editor_absoluteX="15dp" />
+            app:layout_constraintVertical_bias="0.925" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -88,7 +90,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_editor_absoluteX="8dp">
+            app:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteX="4dp">
 
 
             <!-- android:id="@+id/card_view" Criar sempre novo ID para card depois -->
@@ -112,37 +115,35 @@
                         android:id="@+id/Time1card1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="30dp"
                         android:layout_marginTop="31dp"
                         android:text="time1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.041"
+                        app:layout_constraintVertical_bias="0.0"
                         app:layout_constraintLeft_toRightOf="@+id/Logo2card1"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/Gols1card1"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="0dp"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginStart="44dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintRight_toLeftOf="@+id/Gols2card1"
                         app:layout_constraintStart_toEndOf="@+id/Time1card1"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_editor_absoluteX="90dp"
+                        android:layout_marginStart="20dp"/>
 
                     <TextView
                         android:id="@+id/Gols2card1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,43 +151,41 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="299dp"
+                        android:layout_marginEnd="20dp"/>
 
                     <TextView
                         android:id="@+id/Time2card1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="time2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Logo2card1"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
-                        tools:layout_editor_absoluteX="251dp" />
+                        android:layout_marginLeft="255dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        android:layout_marginStart="200dp" />
 
                     <ImageView
                         android:id="@+id/Logo1card1"
                         android:layout_width="29dp"
-                        android:layout_height="44dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="24dp"
-                        android:layout_marginStart="46dp"
+                        android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time2card1"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginBottom="8dp" />
+                        app:srcCompat="@mipmap/ic_corinthians_logo"
+                        android:layout_marginRight="8dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginEnd="8dp" />
 
                     <ImageView
                         android:id="@+id/Logo2card1"
                         android:layout_width="29dp"
                         android:layout_height="44dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginEnd="26dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -195,8 +194,9 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:srcCompat="@mipmap/ic_palmeiras_logo"
-                        android:layout_marginLeft="32dp"
+                        android:layout_marginLeft="20dp"
                         app:layout_constraintLeft_toLeftOf="parent" />
+
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
@@ -225,29 +225,30 @@
                         android:text="time1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
                         app:layout_constraintLeft_toRightOf="@+id/Logo2card2"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/Gols1card2"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="0dp"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="44dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time1card2"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.6" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_editor_absoluteX="90dp"
+                        android:layout_marginStart="20dp"/>
 
                     <TextView
                         android:id="@+id/Gols2card2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -255,54 +256,53 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="299dp"
+                        android:layout_marginEnd="20dp"/>
 
                     <TextView
                         android:id="@+id/Time2card2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="time2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Logo2card2"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        android:layout_marginLeft="255dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        android:layout_marginStart="200dp" />
 
                     <ImageView
                         android:id="@+id/Logo1card2"
-                        android:layout_width="25dp"
-                        android:layout_height="46dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="46dp"
+                        android:layout_width="29dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time2card2"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginRight="24dp"
+                        app:srcCompat="@mipmap/ic_corinthians_logo"
+                        android:layout_marginRight="8dp"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginEnd="8dp" />
 
                     <ImageView
                         android:id="@+id/Logo2card2"
                         android:layout_width="29dp"
                         android:layout_height="44dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginEnd="26dp"
-                        android:layout_marginLeft="32dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/Time1card2"
-                        app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@mipmap/ic_palmeiras_logo" />
-                </android.support.constraint.ConstraintLayout>
+                        app:srcCompat="@mipmap/ic_palmeiras_logo"
+                        android:layout_marginLeft="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
 
+                </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -332,28 +332,28 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:layout_constraintLeft_toRightOf="@+id/Logo2card3"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/Gols1card3"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="0dp"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="44dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time1card3"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.6" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_editor_absoluteX="90dp"
+                        android:layout_marginStart="20dp"/>
 
                     <TextView
                         android:id="@+id/Gols2card3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -361,42 +361,42 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="299dp"
+                        android:layout_marginEnd="20dp"/>
 
                     <TextView
                         android:id="@+id/Time2card3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="time2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Logo2card3"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        android:layout_marginLeft="255dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        android:layout_marginStart="200dp" />
 
                     <ImageView
                         android:id="@+id/Logo1card3"
                         android:layout_width="29dp"
                         android:layout_height="0dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="46dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time2card3"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@mipmap/ic_corinthians_logo"
-                        app:layout_constraintVertical_bias="0.45"
                         android:layout_marginRight="8dp"
-                        app:layout_constraintRight_toRightOf="parent" />
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginEnd="8dp" />
 
                     <ImageView
                         android:id="@+id/Logo2card3"
                         android:layout_width="29dp"
                         android:layout_height="44dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginEnd="26dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/Time1card3"
@@ -404,8 +404,9 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:srcCompat="@mipmap/ic_palmeiras_logo"
-                        android:layout_marginLeft="32dp"
+                        android:layout_marginLeft="20dp"
                         app:layout_constraintLeft_toLeftOf="parent" />
+
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
@@ -436,28 +437,28 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:layout_constraintLeft_toRightOf="@+id/Logo2card4"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/Gols1card4"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="0dp"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="44dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time1card4"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.6" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_editor_absoluteX="90dp"
+                        android:layout_marginStart="20dp"/>
 
                     <TextView
                         android:id="@+id/Gols2card4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -465,39 +466,41 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="299dp"
+                        android:layout_marginEnd="20dp"/>
 
                     <TextView
                         android:id="@+id/Time2card4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="time2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Logo2card4"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        android:layout_marginLeft="255dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        android:layout_marginStart="200dp" />
 
                     <ImageView
                         android:id="@+id/Logo1card4"
                         android:layout_width="29dp"
                         android:layout_height="0dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="46dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time2card4"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@mipmap/ic_corinthians_logo" />
+                        app:srcCompat="@mipmap/ic_corinthians_logo"
+                        android:layout_marginRight="8dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginEnd="8dp" />
 
                     <ImageView
                         android:id="@+id/Logo2card4"
                         android:layout_width="29dp"
                         android:layout_height="44dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginEnd="26dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -506,8 +509,9 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:srcCompat="@mipmap/ic_palmeiras_logo"
-                        android:layout_marginLeft="32dp"
+                        android:layout_marginLeft="20dp"
                         app:layout_constraintLeft_toLeftOf="parent" />
+
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
@@ -537,28 +541,29 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        tools:layout_editor_absoluteX="63dp" />
+                        app:layout_constraintLeft_toRightOf="@+id/Logo2card5"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/Gols1card5"
                         android:layout_width="wrap_content"
-                        android:layout_height="24dp"
+                        android:layout_height="0dp"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="44dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time1card5"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.6" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:layout_editor_absoluteX="90dp"
+                        android:layout_marginStart="20dp"/>
 
                     <TextView
                         android:id="@+id/Gols2card5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginEnd="9dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="0"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -566,39 +571,41 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="299dp"
+                        android:layout_marginEnd="20dp"/>
 
                     <TextView
                         android:id="@+id/Time2card5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
-                        android:layout_marginStart="204dp"
                         android:layout_marginTop="31dp"
                         android:text="time2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Logo2card5"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        android:layout_marginLeft="255dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintVertical_bias="1.0"
+                        android:layout_marginStart="200dp" />
 
                     <ImageView
                         android:id="@+id/Logo1card5"
                         android:layout_width="29dp"
                         android:layout_height="0dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="46dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/Time2card5"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@mipmap/ic_corinthians_logo" />
+                        app:srcCompat="@mipmap/ic_corinthians_logo"
+                        android:layout_marginRight="8dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginEnd="8dp" />
 
                     <ImageView
                         android:id="@+id/Logo2card5"
                         android:layout_width="29dp"
                         android:layout_height="44dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_marginEnd="26dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -606,7 +613,10 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@mipmap/ic_palmeiras_logo" />
+                        app:srcCompat="@mipmap/ic_palmeiras_logo"
+                        android:layout_marginLeft="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
