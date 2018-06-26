@@ -15,11 +15,7 @@ import com.mthumb.a45doSegundo.R;
 import com.mthumb.a45doSegundo.activies.ContentFragment;
 import com.mthumb.a45doSegundo.activies.EscalaFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener/*, AdapterView.OnItemSelectedListener*/ {
-
-
-
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +35,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        /*Spinner times = (Spinner) findViewById(R.id.spinner_times);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.times_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        times.setAdapter(adapter);*/
-
-
-
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.troca, new ContentFragment())
+                .commit();
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,7 +67,9 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.troca, new EscalaFragment())
                     .commit();
         } else if (id == R.id.nav_config) {
-
+            fragmentManager.beginTransaction()
+                    .replace(R.id.troca, new ConfiguracaoFragment())
+                    .commit();
         } else if (id == R.id.nav_share) {
 
         }
@@ -83,31 +78,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-    /*@Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        //ImageView time = (ImageView)findViewById(R.id.logotime);
-        switch(0){
-            case 0:
-                //time.setImageResource(R.mipmap.ic_palmeiras_logo);
-                break;
-            case 1:
-                //time.setImageResource(R.mipmap.ic_santos_logo);
-                break;
-
-            case 2:
-                //time.setImageResource(R.mipmap.ic_corinthians_logo);
-                break;
-
-            case 3:
-                //time.setImageResource(R.mipmap.ic_saopaulo_logo);
-                break;
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }*/
 }

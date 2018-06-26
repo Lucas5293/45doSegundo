@@ -35,6 +35,7 @@ import com.mthumb.a45doSegundo.R;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -44,7 +45,9 @@ public class ContentFragment extends Fragment {
 
     private View myView;
     private LinearLayout linearLayout;
-    private List<Pair<TextView, TextView>> rowEvent;
+    private ImageView logo;
+
+    private static Team time;
 
     public ControllerTeam controllerTeam;
     public ControllerEvent controllerEvent;
@@ -63,6 +66,21 @@ public class ContentFragment extends Fragment {
 
         myView = inflater.inflate(R.layout.content_main, container, false);
 
+        if (this.time == null) {
+            try {
+                this.time = controllerTeam.getTeamByName("palmeiras").get(0);
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        else {
+            this.logo = (ImageView) myView.findViewById(R.id.logotime);
+            try {
+                this.logo.setImageBitmap(CachedBitmap.get(time.getImageUrl()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         this.linearLayout = (LinearLayout) myView.findViewById(R.id.linearLayout);
         this.linearLayout.setVisibility(View.INVISIBLE);
@@ -85,7 +103,6 @@ public class ContentFragment extends Fragment {
 
         final List<DataToCardView> dados = new ArrayList<>();
 
-        Team time = controllerTeam.getTeamByName("palmeiras").get(0);
         List<Event> events = controllerEvent.getLastFiveEventsByTeamId(time.getId());
 
         for(int i=0; i<5; i++){
@@ -188,6 +205,10 @@ public class ContentFragment extends Fragment {
         cardViews.add(cardView5);
 
         return cardViews;
+    }
+
+    public static void setTeam(Team team){
+        ContentFragment.time = team;
     }
 
     public class DataToCardView{
