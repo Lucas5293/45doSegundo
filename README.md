@@ -9,4 +9,4 @@ As informações do seu time na palma da sua mão
 
 ## Prints
 <img src="Prints/45.jpg" width="300">
-<img src="Prints/453.jpg" width="300">
+<img src="Prints/452.jpg" width="300">
